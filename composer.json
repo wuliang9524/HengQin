@@ -1,0 +1,17 @@
+{
+    "name": "logan/hengqin",
+    "description": "高明 珠海地区,横琴平台",
+    "type": "lib",
+    "autoload": {
+        "psr-4": {
+            "Logan\\Hengqin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "long",
+            "email": "wuliang9524@gmail.com"
+        }
+    ],
+    "require": {}
+}
