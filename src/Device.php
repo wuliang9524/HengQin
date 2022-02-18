@@ -46,10 +46,9 @@ class Device
     /**
      * 构造方法
      *
-     * @param string $host  设备服务器地址
-     * @param string $key
-     * @param string $token
-     * @param string $version
+     * @param string $host  服务器 IP
+     * @param int $port     端口
+     * @param string $version   版本
      * @author LONG <1121116451@qq.com>
      * @version version
      * @date 2022-02-18
@@ -82,7 +81,7 @@ class Device
      * @param string $devCode   设备编码
      * @param string $idCode    人员身份证编号
      * @param string $dateTime  打卡时间 Y-m-d H:i:s
-     * @param string $image     打卡照片地址 eg: http://file.global8.cn/User/620c448e940c9.jpeg
+     * @param string $image     打卡照片地址 eg: http://file.global8.cn/User/620c448e940c9.jpeg 尽量保持 10kb，不能超过 50kb
      * @param int $type         打卡方式 6->人脸方式
      * @return void
      * @author LONG <1121116451@qq.com>

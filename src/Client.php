@@ -219,6 +219,100 @@ class Client
         return $this->sign;
     }
 
+    /**
+     * 查询项目信息
+     *
+     * @param string $proCode   项目编码
+     * @param string $comCode   总承包单位统一社会信用代码
+     * @param string $comName   总承包单位名称
+     * @param string $name      项目名称
+     * @param string $userName  项目账号
+     * @return void
+     * @author LONG <1121116451@qq.com>
+     * @version version
+     * @date 2022-02-18
+     */
+    public function queryProject(
+        string $proCode,
+        string $comCode,
+        string $comName,
+        string $name,
+        string $userName
+    ) {
+        $this->uri = $this->host . '/UploadSmz/GetItemInfo';
+        $this->setParams([
+            'ProjectCode'        => $proCode,
+            'ContractorCorpCode' => $comCode,
+            'ContractorCorpName' => $comName,
+            'Name'               => $name,
+            'Username'           => $userName,
+        ]);
+        return $this;
+    }
+
+    /**
+     * 上传项目信息
+     *
+     * @param array $proInfo    对应接口文档 POST 的 JSON 数据,二维数组
+     * @return void
+     * @author LONG <1121116451@qq.com>
+     * @version version
+     * @date 2022-02-18
+     */
+    public function addProject(array $proInfo)
+    {
+        $this->uri = $this->host . '/UploadSmz/UploadItemInfo';
+        $this->setParams($proInfo);
+        return $this;
+    }
+
+    /**
+     * 上传企业信息
+     *
+     * @param array $companyInfo    对应接口文档 POST 的 JSON 数据
+     * @return void
+     * @author LONG <1121116451@qq.com>
+     * @version version
+     * @date 2022-02-18
+     */
+    public function addCompany(array $companyInfo)
+    {
+        $this->uri = $this->host . '/UploadSmz/UploadCompanyInfo';
+        $this->setParams($companyInfo);
+        return $this;
+    }
+
+    /**
+     * 上传参建单位信息
+     *
+     * @param array $params     对应接口文档 POST 的 JSON 数据, 多维数组
+     * @return void
+     * @author LONG <1121116451@qq.com>
+     * @version version
+     * @date 2022-02-18
+     */
+    public function addProjectCompany(array $params)
+    {
+        $this->uri = $this->host . '/UploadSmz/UploadParticipateInfo';
+        $this->setParams($params);
+        return $this;
+    }
+
+    /**
+     * 修改参建单位信息
+     *
+     * @param array $params     对应接口文档 POST 的 JSON 数据, 多维数组
+     * @return void
+     * @author LONG <1121116451@qq.com>
+     * @version version
+     * @date 2022-02-18
+     */
+    public function updateProjectCompany(array $params)
+    {
+        $this->uri = $this->host . '/UploadSmz/UpdateParticipateInfo';
+        $this->setParams($params);
+        return $this;
+    }
 
     /**
      * 查询班组
