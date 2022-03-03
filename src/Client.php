@@ -695,8 +695,7 @@ class Client
                 'timestamp'   => $this->dateTime,
                 'signature'   => $this->sign,
             ],
-            'body'  => $this->body,
-            'debug' => true
+            'body'  => $this->body
         ])
             ->getBody()
             ->getContents();
