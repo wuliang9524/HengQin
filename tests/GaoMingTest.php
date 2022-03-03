@@ -21,6 +21,18 @@ class GaoMingTest extends TestCase
         $res = $instance->queryGroup($this->proCode, '')->send();
     }
 
+    public function testAddGroup()
+    {
+        $instance = new Client($this->host, $this->config['key'], $this->config['token']);
+        $res = $instance->setDateTime(strtotime('2022-03-03 11:14:39'))->addGroup([
+            'projectCode' => "6B7BE50ED44A4FD2AAE241615F4CB775",
+            'corpCode'    => "9144060019353290XX",
+            'corpName'    => "佛山市房建集团有限公司",
+            'teamName'    => "铁工班",
+            'entryTime'   => "2021-04-30"
+        ])->send();
+    }
+
     public function testQueryBaseDic()
     {
         $instance = new Client($this->host, $this->config['key'], $this->config['token']);

@@ -345,7 +345,7 @@ class Client
      */
     public function addGroup(array $groupInfo)
     {
-        $this->uri = $this->host . '/UploadSmz/GetTeamInfo';
+        $this->uri = $this->host . '/UploadSmz/UploadTeamInfo';
         $this->setParams($groupInfo);
         return $this;
     }
@@ -695,7 +695,8 @@ class Client
                 'timestamp'   => $this->dateTime,
                 'signature'   => $this->sign,
             ],
-            'body'  => $this->body
+            'body'  => $this->body,
+            'debug' => true
         ])
             ->getBody()
             ->getContents();
