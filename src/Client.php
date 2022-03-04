@@ -539,8 +539,8 @@ class Client
      * @param int $idCodeType   证件类型字典编号
      * @param string $idCode    证件号码
      * @param string $date      进场日期
-     * @param string $imgName   凭证扫描件名称
-     * @param string $imgBase64 凭证扫描件
+     * @param string|null $imgName   凭证扫描件名称
+     * @param string|null $imgBase64 凭证扫描件
      * @return void
      * @author LONG <1121116451@qq.com>
      * @version version
@@ -555,8 +555,8 @@ class Client
         int $idCodeType,
         string $idCode,
         string $date,
-        string $imgName = '',
-        string $imgBase64 = ''
+        ?string $imgName = '',
+        ?string $imgBase64 = ''
     ) {
         $this->uri = $this->host . '/UploadSmz/UploadEntryExitInfo';
         $this->setParams([
@@ -590,8 +590,8 @@ class Client
      * @param int $idCodeType   证件类型字典编号
      * @param string $idCode    证件号码
      * @param string $date      进场日期
-     * @param string $imgName   凭证扫描件名称
-     * @param string $imgBase64 凭证扫描件
+     * @param string $imgName|null   凭证扫描件名称
+     * @param string $imgBase64|null 凭证扫描件
      * @return void
      * @author LONG <1121116451@qq.com>
      * @version version
@@ -606,8 +606,8 @@ class Client
         int $idCodeType,
         string $idCode,
         string $date,
-        string $imgName = '',
-        string $imgBase64 = ''
+        ?string $imgName = '',
+        ?string $imgBase64 = ''
     ) {
         $this->uri = $this->host . '/UploadSmz/UploadEntryExitInfo';
         $this->setParams([
