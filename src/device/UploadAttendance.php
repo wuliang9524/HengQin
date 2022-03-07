@@ -43,6 +43,7 @@ class UploadAttendance extends Dev
         );
 
         $xor = $this->bbcXor($hexWNo . $dateTime . $type . $imageLen . $imageHex);
+        $xor = str_pad($xor, 2, '0', STR_PAD_LEFT); 
 
         return $this->compileResHex = $hexWNo . $dateTime . $type . $imageLen . $imageHex . $xor;
     }
