@@ -42,7 +42,7 @@ class GaoMingTest extends TestCase
 
     public function testAddAttendance()
     {
-        $host = '119.23.147.10';
+        $host = '119.23.147.62';
         $port = 9619;
         $factoryNo = "8F1120536942D226AB164FCFEEC0E98F";
         $deviceNo = "D9E3960548E6C4C47D10061179FB79F8";

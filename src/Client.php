@@ -382,8 +382,8 @@ class Client
      * @param string $endDate   失效日期，yyyy-MM-dd
      * @param string $imgName   合同附件名称
      * @param string $imgBase64 附件Base64字符串，不超过 1M
-     * @param [type] $unit      计量单位
-     * @param [type] $unitPrice 计量单价
+     * @param int|null $unit      计量单位
+     * @param int|null $unitPrice 计量单价
      * @return void
      * @author LONG <1121116451@qq.com>
      * @version version
@@ -400,8 +400,8 @@ class Client
         string $endDate,
         string $imgName,
         string $imgBase64,
-        int $unit = NULL,
-        float $unitPrice = NULL
+        ?int $unit = NULL,
+        ?float $unitPrice = NULL
     ) {
         $this->uri = $this->host . '/UploadSmz/UploadContract';
         $this->setParams([

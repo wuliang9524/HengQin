@@ -32,6 +32,7 @@ class WorkerFeature extends Dev
         $idCode = bin2hex($this->params['idCode']);
 
         $xor = $this->bbcXor($hexDNo . $idCode);
+        $xor = str_pad($xor, 2, '0', STR_PAD_LEFT);
 
         return $this->compileResHex = $hexDNo . $idCode . $xor;
     }
