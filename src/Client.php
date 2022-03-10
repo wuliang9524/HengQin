@@ -443,7 +443,7 @@ class Client
      * @param string $issue         发证机关
      * @param string $validDate     证件有效期 格式如：2018.01.01-2028.01.01 或 2018.01.01-长期
      * @param string $faceLibImg    采集照片 base64 格式(不带头部) 不超过 50KB 
-     * @param string $faceLibRedImg 红外照片 base64 格式(不带头部) 不超过 50KB 
+     * @param string|null $faceLibRedImg 红外照片 base64 格式(不带头部) 不超过 50KB 
      * @return void
      * @author LONG <1121116451@qq.com>
      * @version version
@@ -461,7 +461,7 @@ class Client
         string $issue,
         string $validDate,
         string $faceLibImg,
-        string $faceLibRedImg
+        ?string $faceLibRedImg = null
     ) {
         $this->uri = $this->host . '/UploadSmz/UploadWorkerFeature';
         $this->setParams([
